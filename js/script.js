@@ -1,27 +1,47 @@
-//VARIABLES
+'use strict';
 
-let num = 266219;
-let num2 = new String(num);
-let result = 1;
+//1. 
 
-//CONSOLE OUTPUT
+let lang = prompt('ru or en?');
 
-/*let res = num2[0] * num2[1];
-console.log(res);
-res = res * num2[2];
-console.log(res);
-res = res * num2[3];
-console.log(res);
-res = res * num2[4];
-console.log(res);
-res = res * num2[5];
+//if
 
-console.log(res);*/
-
-for (let i = 0; i < num2.length; i++) {
-   result = result * num2[i];
-   console.log(result);
+if (lang === 'ru') {
+   console.log('Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс');
+} else if (lang === 'en') {
+   console.log('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun');
+} else {
+   console.log('Что-то пошло не так');
 }
-let res1 = result ** 3;
-let res2 = new String(res1);
-console.log(res2[0], res2[1]);
+
+//switch
+
+switch (lang) {
+   case 'ru':
+      console.log('Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс');
+      break;
+   case 'en':
+      console.log('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun');
+      break;
+   default:
+      console.log('Что-то пошло не так');
+}
+
+//array
+
+let langArr = [];
+
+langArr['ru'] = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+langArr['en'] = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+//let lang = 'ru';
+
+console.log(langArr[lang]);
+
+//2.
+
+let namePerson = prompt('What is your name?');
+
+console.log((namePerson === 'Артём') ? 'Директор' :
+   (namePerson === 'Максим') ? 'Преподаватель' :
+      'Студент');
