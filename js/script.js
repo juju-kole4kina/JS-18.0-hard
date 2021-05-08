@@ -2,9 +2,9 @@
 // VARIABLES
 
 let timeDisplay = function () {
-   let week = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'];
-   let month = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября',
-      'октября', 'ноября', 'декабря'];
+   let week = ['воскресенье, ', 'понедельник, ', 'вторник, ', 'среда, ', 'четверг, ', 'пятница, ', 'суббота, '];
+   let month = [' января ', ' февраля ', ' марта ', ' апреля ', ' мая ', ' июня ', ' июля ', ' августа ', ' сентября ',
+      ' октября ', ' ноября ', ' декабря '];
    let date = new Date();
 
    let addZero = function (elem) {
@@ -24,7 +24,7 @@ let timeDisplay = function () {
             n > 1 && n < 5 ? num + textVariant[1] :
                num + textVariant[2];
    };
-   let textTime = 'Сегодня ' + week[date.getDay()] + ' ' + date.getDay() + ' ' + month[date.getMonth()] +
+   let textTime = 'Сегодня ' + week[date.getDay()] + ' ' + date.getDate() + ' ' + month[date.getMonth()] +
       ' ' + date.getFullYear() + ' года,' + ' ' + changeEnding(date.getHours(), 'h') +
       ' ' + changeEnding(date.getMinutes(), 'm') + ' ' + changeEnding(date.getSeconds());
    let time = addZero(date.getHours()) + ':' + addZero(date.getMinutes()) +
